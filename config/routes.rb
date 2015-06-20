@@ -4,6 +4,7 @@ Rails.application.routes.draw do
 
   root to: 'users#index'
   get '/sign_in', to: 'sessions#new', as: 'sign_in'
+  delete '/sessions', to: 'sessions#destroy', as: 'sign_out'
 end
 
 #       Prefix Verb   URI Pattern                  Controller#Action
@@ -24,3 +25,4 @@ end
 #              DELETE /sessions/:id(.:format)      sessions#destroy
 #         root GET    /                            users#index
 #      sign_in GET    /sign_in(.:format)           sessions#new
+#              DELETE /sessions(.:format)          sessions#destroy
