@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :gifts
   resources :users 
   resources :sessions, except: :new
 
