@@ -7,7 +7,12 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-
+  <nav>
+    <%= link_to "Home", root_path %>  
+    <%= link_to "sign In", sign_in_path %>
+    <%= link_to "Create Account", new_user_path %>    
+    <%= link_to "Sign Out", url: '/sessions', method: 'post'  %>  
+  </nav>
 <%= yield %>
 
 <% console %>
