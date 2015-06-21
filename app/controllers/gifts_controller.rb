@@ -1,4 +1,5 @@
 class GiftsController < ApplicationController
+  before_action :signed_in?, except: [:index, :show]
   before_action :set_gift, only: [:show, :edit, :update, :destroy]
 
   # GET /gifts
@@ -24,7 +25,7 @@ class GiftsController < ApplicationController
   # POST /gifts
   # POST /gifts.json
   def create
-    @gift = Gift.new(gift_params)
+    @gift = current_user.gifts.new(gift_params)
 
     respond_to do |format|
       if @gift.save
